@@ -12,6 +12,7 @@ class Solution:
     '''
     def reverse(self, x: int) -> int:
         num = str(x)[::-1].rstrip('-')
+        
         if int(num) < 2**31:
             if x >= 0:
                 return int(num)
