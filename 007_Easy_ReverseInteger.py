@@ -12,10 +12,13 @@ class Solution:
     '''
     def reverse(self, x: int) -> int:
         num = str(x)[::-1].rstrip('-')
-        
         if int(num) < 2**31:
             if x >= 0:
                 return int(num)
             else:
                 return 0 - int(num)
         return 0
+if __name__ == "__main__":
+    rst = Solution()
+    print(rst.reverse(456))
+    print(rst.reverse(-1546783))
