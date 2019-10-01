@@ -25,6 +25,31 @@ class Solution:
         for num in digits:
             ans = [item+word for item in ans for word in phone[num]]
         return ans
+    
+    def letterCombinations1(self, digits: str):
+        '''
+        该函数自定义一个迭代数组实现上述功能
+        使用3个for循环
+        和一个额外空间backfun
+        ''' 
+        phone = {'2':['a','b','c'],
+                 '3':['d','e','f'],
+                 '4':['g','h','i'],
+                 '5':['j','k','l'],
+                 '6':['m','n','o'],
+                 '7':['p','q','r','s'],
+                 '8':['t','u','v'],
+                 '9':['w','x','y','z']}
+        if digits == "":
+            return []
+        ans = ['']
+        for num in digits:
+            backfun = []
+            for item in ans:
+                for word in phone[num]:
+                    backfun.append(item + word)
+            ans = backfun
+        return ans
 
 if __name__ == "__main__":
     rst = Solution()
